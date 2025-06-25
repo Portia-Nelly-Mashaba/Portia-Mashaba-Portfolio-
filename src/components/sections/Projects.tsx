@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -297,7 +296,7 @@ const Projects: React.FC = () => {
                       </div>
                       {project.featured && <Star className="h-4 w-4 text-yellow-500" />}
                     </div>
-                    <Badge className={getStatusColor(project.status)} size="sm">
+                    <Badge className={getStatusColor(project.status)}>
                       {project.status}
                     </Badge>
                   </div>
