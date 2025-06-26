@@ -16,15 +16,24 @@ import {
 } from 'lucide-react';
 
 const Skills: React.FC = () => {
-  const technicalSkills = [
+  const frontendSkills = [
     { name: 'React.js', level: 92, experience: '3+ years', color: 'bg-blue-500' },
     { name: 'Angular', level: 88, experience: '2+ years', color: 'bg-red-500' },
     { name: 'JavaScript/TypeScript', level: 90, experience: '4+ years', color: 'bg-yellow-500' },
     { name: 'HTML/CSS', level: 95, experience: '5+ years', color: 'bg-orange-500' },
+    { name: 'Tailwind CSS', level: 90, experience: '3+ years', color: 'bg-cyan-500' },
+    { name: 'Vue.js', level: 75, experience: '1+ years', color: 'bg-green-500' },
+    { name: 'SASS/SCSS', level: 88, experience: '3+ years', color: 'bg-pink-500' },
+    { name: 'Bootstrap', level: 85, experience: '4+ years', color: 'bg-purple-500' }
+  ];
+
+  const backendSkills = [
     { name: 'Python/Django', level: 90, experience: '3+ years', color: 'bg-green-500' },
     { name: 'PHP/Laravel', level: 85, experience: '3+ years', color: 'bg-purple-500' },
     { name: 'Node.js', level: 80, experience: '2+ years', color: 'bg-green-600' },
-    { name: 'REST APIs', level: 88, experience: '3+ years', color: 'bg-indigo-500' }
+    { name: 'REST APIs', level: 88, experience: '3+ years', color: 'bg-indigo-500' },
+    { name: 'GraphQL', level: 75, experience: '1+ years', color: 'bg-pink-600' },
+    { name: 'Express.js', level: 78, experience: '2+ years', color: 'bg-gray-600' }
   ];
 
   const designSkills = [
@@ -108,26 +117,26 @@ const Skills: React.FC = () => {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Skills & Expertise</h1>
         <Badge variant="secondary" className="bg-violet-100 dark:bg-violet-900 text-violet-700 dark:text-violet-300">
-          15+ Technologies
+          40+ Technologies
         </Badge>
       </div>
 
-      <Tabs defaultValue="technical" className="w-full">
+      <Tabs defaultValue="frontend" className="w-full">
         <TabsList className="grid w-full grid-cols-6">
-          <TabsTrigger value="technical">Technical</TabsTrigger>
-          <TabsTrigger value="design">Design</TabsTrigger>
+          <TabsTrigger value="frontend">Frontend</TabsTrigger>
+          <TabsTrigger value="backend">Backend</TabsTrigger>
           <TabsTrigger value="database">Database</TabsTrigger>
           <TabsTrigger value="devops">DevOps</TabsTrigger>
           <TabsTrigger value="mobile">Mobile</TabsTrigger>
           <TabsTrigger value="testing">Testing</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="technical" className="mt-6">
-          <SkillCategory skills={technicalSkills} icon={Code2} title="Frontend & Backend Development" />
+        <TabsContent value="frontend" className="mt-6">
+          <SkillCategory skills={frontendSkills} icon={Code2} title="Frontend Development" />
         </TabsContent>
         
-        <TabsContent value="design" className="mt-6">
-          <SkillCategory skills={designSkills} icon={Palette} title="UI/UX & Design" />
+        <TabsContent value="backend" className="mt-6">
+          <SkillCategory skills={backendSkills} icon={Globe} title="Backend Development" />
         </TabsContent>
         
         <TabsContent value="database" className="mt-6">
