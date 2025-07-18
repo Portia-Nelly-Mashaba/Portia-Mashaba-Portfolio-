@@ -251,22 +251,39 @@ const Projects: React.FC = () => {
                       <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech, idx) => (
-                          <Badge key={idx} variant="outline" className="bg-violet-50 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300">
+                          <Badge key={idx} variant="outline" className="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-foreground border-primary/20">
                             {tech}
                           </Badge>
                         ))}
                       </div>
                     </div>
 
+                    {/* Key Features */}
+                    <div>
+                      <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Key Features</h4>
+                      <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-1">
+                        {project.features.slice(0, 3).map((feature, idx) => (
+                          <li key={idx} className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
                     {/* Actions */}
                     <div className="flex space-x-2 pt-2">
-                      <Button size="sm" className="bg-violet-600 hover:bg-violet-700">
+                      <Button size="sm" className="bg-primary hover:bg-primary/90">
                         <ExternalLink className="h-3 w-3 mr-1" />
                         Live Demo
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button size="sm" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                         <Github className="h-3 w-3 mr-1" />
                         Source Code
+                      </Button>
+                      <Button size="sm" variant="outline">
+                        <Eye className="h-3 w-3 mr-1" />
+                        Details
                       </Button>
                     </div>
                   </div>
