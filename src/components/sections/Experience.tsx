@@ -159,11 +159,14 @@ const Experience: React.FC = () => {
                     </CardTitle>
                     <StatusBadge status={job.status} />
                   </div>
-                  <div className="flex items-center space-x-4 text-slate-600 dark:text-slate-400">
+                  <div className="flex items-center space-x-4 text-slate-600 dark:text-slate-400 flex-wrap gap-2">
                     <div className="flex items-center space-x-1">
                       <Briefcase className="h-4 w-4" />
                       <span className="font-medium">{job.company}</span>
                     </div>
+                    <Badge variant="outline" className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs">
+                      {job.type}
+                    </Badge>
                     <div className="flex items-center space-x-1">
                       <Calendar className="h-4 w-4" />
                       <span>{job.period}</span>

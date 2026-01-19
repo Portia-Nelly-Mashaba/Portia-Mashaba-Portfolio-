@@ -17,13 +17,14 @@ import SmartTerminal from '@/components/SmartTerminal';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('overview');
+  const [skillsTab, setSkillsTab] = useState('frontend');
 
   const renderContent = () => {
     switch (activeSection) {
       case 'overview':
         return <Overview />;
       case 'skills':
-        return <Skills />;
+        return <Skills activeTab={skillsTab} />;
       case 'experience':
         return <Experience />;
       case 'projects':
@@ -40,7 +41,7 @@ const Index = () => {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex w-full">
-        <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
+        <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} setSkillsTab={setSkillsTab} />
         
         <div className="flex-1 flex flex-col">
           <Header />

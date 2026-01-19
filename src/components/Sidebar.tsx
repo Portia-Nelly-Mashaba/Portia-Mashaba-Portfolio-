@@ -18,15 +18,21 @@ import {
   Mail,
   Phone,
   Github,
-  ExternalLink
+  ExternalLink,
+  Smartphone,
+  Database,
+  Cloud,
+  Shield,
+  Layers
 } from 'lucide-react';
 
 interface SidebarProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
+  setSkillsTab?: (tab: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, setSkillsTab }) => {
   const menuItems = [
     { id: 'overview', label: 'Overview', icon: User },
     { id: 'skills', label: 'Technical Skills', icon: Code2 },
@@ -45,12 +51,63 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
     document.body.removeChild(link);
   };
 
-  const folders = [
-    { name: 'Frontend', count: 8, color: 'bg-blue-500' },
-    { name: 'Backend', count: 6, color: 'bg-green-500' },
-    { name: 'Database', count: 4, color: 'bg-purple-500' },
-    { name: 'Testing', count: 3, color: 'bg-orange-500' },
+  const skillCategories = [
+    { 
+      name: 'Frontend', 
+      count: 8, 
+      color: 'bg-blue-500',
+      icon: Code2,
+      description: 'React.js, Angular, HTML/CSS, JavaScript, PWA, Tailwind, Bootstrap',
+      tab: 'frontend'
+    },
+    { 
+      name: 'Backend', 
+      count: 6, 
+      color: 'bg-green-500',
+      icon: Layers,
+      description: 'Python/Django, PHP/Laravel, Node.js, .NET (C#), REST APIs',
+      tab: 'backend'
+    },
+    { 
+      name: 'Mobile', 
+      count: 5, 
+      color: 'bg-cyan-500',
+      icon: Smartphone,
+      description: 'React Native, Flutter/Dart, .NET Mobile, Mobile APIs',
+      tab: 'mobile'
+    },
+    { 
+      name: 'Database', 
+      count: 6, 
+      color: 'bg-purple-500',
+      icon: Database,
+      description: 'SQL/MySQL, PostgreSQL, NoSQL/MongoDB, SSRS, Database Design',
+      tab: 'database'
+    },
+    { 
+      name: 'Cloud/DevOps', 
+      count: 6, 
+      color: 'bg-orange-500',
+      icon: Cloud,
+      description: 'AWS, Docker, Kubernetes, CI/CD, Git/GitHub, Firebase',
+      tab: 'devops'
+    },
+    { 
+      name: 'Testing & QA', 
+      count: 6, 
+      color: 'bg-red-500',
+      icon: Shield,
+      description: 'Unit, Integration, Functional, PyTest, QA Testing, Bug Tracking',
+      tab: 'testing'
+    },
   ];
+
+  const handleCategoryClick = (categoryName: string, tab: string) => {
+    setActiveSection('skills');
+    if (setSkillsTab) {
+      setSkillsTab(tab);
+    }
+  };
 
   return (
     <div className="w-64 h-full bg-slate-900 dark:bg-slate-950 border-r border-slate-700 dark:border-slate-800 flex flex-col">
@@ -104,22 +161,38 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
 
         <Separator className="bg-slate-700 mb-4" />
 
-        {/* Folders Section */}
+        {/* Skills Categories Section */}
         <div className="mb-6">
-          <h3 className="text-slate-400 text-xs uppercase tracking-wider mb-3">Skills Categories</h3>
-          <div className="space-y-2">
-            {folders.map((folder) => (
-              <div key={folder.name} className="flex items-center justify-between text-slate-300 hover:text-white cursor-pointer group">
-                <div className="flex items-center">
-                  <div className={`w-2 h-2 rounded-full ${folder.color} mr-3`}></div>
-                  <Folder className="h-4 w-4 mr-2" />
-                  <span className="text-sm">{folder.name}</span>
+          <h3 className="text-slate-400 text-xs uppercase tracking-wider mb-2">Tech Stack Overview</h3>
+          <div className="space-y-1">
+            {skillCategories.map((category) => {
+              const Icon = category.icon;
+              return (
+                <div 
+                  key={category.name} 
+                  className="flex items-center justify-between text-slate-300 hover:text-white cursor-pointer group p-1.5 rounded hover:bg-slate-800 transition-all"
+                  onClick={() => handleCategoryClick(category.name, category.tab)}
+                  title={category.description}
+                >
+                  <div className="flex items-center flex-1 min-w-0">
+                    <div className={`w-2 h-2 rounded-full ${category.color} mr-2 flex-shrink-0 group-hover:scale-110 transition-transform`}></div>
+                    <Icon className="h-3.5 w-3.5 mr-2 text-slate-400 group-hover:text-white transition-colors flex-shrink-0" />
+                    <span className="text-sm font-medium group-hover:text-white transition-colors">{category.name}</span>
+                  </div>
+                  <Badge variant="secondary" className="bg-slate-800 text-slate-300 text-xs flex-shrink-0 ml-2 group-hover:bg-slate-700 transition-colors">
+                    {category.count}
+                  </Badge>
                 </div>
-                <Badge variant="secondary" className="bg-slate-800 text-slate-300 text-xs">
-                  {folder.count}
-                </Badge>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+          <div className="mt-2 pt-2 border-t border-slate-700">
+            <div className="flex items-center justify-between text-xs text-slate-500">
+              <span>Total Technologies</span>
+              <Badge variant="outline" className="bg-violet-900/30 border-violet-700 text-violet-300 text-xs font-semibold">
+                37+
+              </Badge>
+            </div>
           </div>
         </div>
 

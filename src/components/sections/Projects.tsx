@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import { 
   Globe, 
   Github, 
@@ -14,15 +29,20 @@ import {
   Shield,
   Smartphone
 } from 'lucide-react';
+import portfolioHomeImage from '@/assets/portfolio-of-evidence/home.png';
+import portfolioAboutImage from '@/assets/portfolio-of-evidence/about.png';
+import portfolioSkillsImage from '@/assets/portfolio-of-evidence/skills.png';
+import portfolioProjectsImage from '@/assets/portfolio-of-evidence/projects.png';
 
 const Projects: React.FC = () => {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const projects = [
     {
       id: 1,
       title: 'Portfolio of Evidence',
       description: 'A comprehensive showcase of development projects featuring modern UI/UX design, responsive layouts, and performance optimization. Built with React.js and deployed on Vercel with CI/CD integration.',
-      url: 'portfolio-of-evidence-teal.vercel.app',
-      github: 'github.com/portia/portfolio-evidence',
+      url: 'https://portfolio-of-evidence-teal.vercel.app',
+      github: 'https://github.com/Portia-Nelly-Mashaba/portfolio-of-evidence',
       tech: ['React.js', 'Tailwind CSS', 'Vercel', 'Responsive Design', 'Performance Optimization'],
       status: 'Live Production',
       category: 'Web Application',
@@ -41,7 +61,12 @@ const Projects: React.FC = () => {
         'SEO optimized with meta tags and structured data',
         'Progressive Web App (PWA) capabilities'
       ],
-      image: '/placeholder.svg',
+      images: [
+        portfolioHomeImage,
+        portfolioAboutImage,
+        portfolioSkillsImage,
+        portfolioProjectsImage
+      ],
       featured: true
     },
     {
@@ -273,15 +298,28 @@ const Projects: React.FC = () => {
 
                     {/* Actions */}
                     <div className="flex space-x-2 pt-2">
-                      <Button size="sm" className="bg-primary hover:bg-primary/90">
+                      <Button 
+                        size="sm" 
+                        className="bg-primary hover:bg-primary/90"
+                        onClick={() => project.url && window.open(project.url, '_blank')}
+                      >
                         <ExternalLink className="h-3 w-3 mr-1" />
                         Live Demo
                       </Button>
-                      <Button size="sm" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                        onClick={() => project.github && window.open(project.github, '_blank')}
+                      >
                         <Github className="h-3 w-3 mr-1" />
                         Source Code
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => setSelectedProject(project.id)}
+                      >
                         <Eye className="h-3 w-3 mr-1" />
                         Details
                       </Button>
@@ -338,11 +376,20 @@ const Projects: React.FC = () => {
                     </div>
 
                     <div className="flex space-x-2">
-                      <Button size="sm" variant="outline" className="flex-1">
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => setSelectedProject(project.id)}
+                      >
                         <Eye className="h-3 w-3 mr-1" />
                         View
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => project.github && window.open(project.github, '_blank')}
+                      >
                         <Github className="h-3 w-3" />
                       </Button>
                     </div>
@@ -353,6 +400,133 @@ const Projects: React.FC = () => {
           })}
         </div>
       </div>
+
+      {/* Project Details Dialog */}
+      <Dialog open={selectedProject !== null} onOpenChange={(open) => !open && setSelectedProject(null)}>
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+          {selectedProject && (() => {
+            const project = projects.find(p => p.id === selectedProject);
+            if (!project) return null;
+            const CategoryIcon = getCategoryIcon(project.category);
+            
+            return (
+              <>
+                <DialogHeader>
+                  <div className="flex items-center space-x-2">
+                    <CategoryIcon className="h-6 w-6 text-violet-500" />
+                    <DialogTitle className="text-2xl text-slate-900 dark:text-white">
+                      {project.title}
+                    </DialogTitle>
+                  </div>
+                  <DialogDescription className="text-base pt-2">
+                    {project.description}
+                  </DialogDescription>
+                  <div className="flex items-center space-x-2 pt-2">
+                    <Badge className={getStatusColor(project.status)}>
+                      {project.status}
+                    </Badge>
+                    <Badge variant="outline">
+                      {project.category}
+                    </Badge>
+                  </div>
+                </DialogHeader>
+
+                <div className="space-y-6 py-4">
+                  {/* Project Images Carousel */}
+                  {((project.images && project.images.length > 0) || project.image) && (
+                    <div className="w-full relative">
+                      <Carousel 
+                        className="w-full"
+                        opts={{
+                          align: "start",
+                          loop: true,
+                        }}
+                        plugins={[
+                          Autoplay({
+                            delay: 3000,
+                            stopOnInteraction: false,
+                          }),
+                        ]}
+                      >
+                        <CarouselContent className="-ml-0">
+                          {(project.images && project.images.length > 0 
+                            ? project.images 
+                            : [project.image]
+                          ).map((image, idx) => (
+                            <CarouselItem key={idx} className="pl-0">
+                              <div className="w-full rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg relative">
+                                <img 
+                                  src={image} 
+                                  alt={`${project.title} - Screenshot ${idx + 1}`}
+                                  className="w-full h-auto object-cover"
+                                />
+                              </div>
+                            </CarouselItem>
+                          ))}
+                        </CarouselContent>
+                        {((project.images && project.images.length > 1)) && (
+                          <>
+                            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-none h-10 w-10 rounded-full z-10" />
+                            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-none h-10 w-10 rounded-full z-10" />
+                          </>
+                        )}
+                      </Carousel>
+                    </div>
+                  )}
+
+                  {/* Technologies */}
+                  <div>
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-3">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, idx) => (
+                        <Badge key={idx} variant="outline" className="bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-foreground border-primary/20">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* All Features */}
+                  <div>
+                    <h3 className="font-semibold text-slate-900 dark:text-white mb-3">Key Features</h3>
+                    <ul className="space-y-2">
+                      {project.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start space-x-3 text-slate-700 dark:text-slate-300">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex space-x-3 pt-4 border-t border-slate-200 dark:border-slate-700">
+                    {project.url && (
+                      <Button 
+                        className="bg-primary hover:bg-primary/90"
+                        onClick={() => window.open(project.url, '_blank')}
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Visit Live Site
+                      </Button>
+                    )}
+                    {project.github && (
+                      <Button 
+                        variant="outline" 
+                        className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                        onClick={() => window.open(project.github, '_blank')}
+                      >
+                        <Github className="h-4 w-4 mr-2" />
+                        View Source Code
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </>
+            );
+          })()}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

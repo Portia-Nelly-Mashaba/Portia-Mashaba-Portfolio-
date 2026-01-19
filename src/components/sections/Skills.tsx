@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -15,7 +15,18 @@ import {
   Cloud
 } from 'lucide-react';
 
-const Skills: React.FC = () => {
+interface SkillsProps {
+  activeTab?: string;
+}
+
+const Skills: React.FC<SkillsProps> = ({ activeTab = 'frontend' }) => {
+  const [currentTab, setCurrentTab] = useState(activeTab);
+
+  useEffect(() => {
+    if (activeTab) {
+      setCurrentTab(activeTab);
+    }
+  }, [activeTab]);
   const frontendSkills = [
     { name: 'React.js', level: 92, experience: '5+ years', color: 'bg-blue-500' },
     { name: 'Angular', level: 88, experience: '5+ years', color: 'bg-red-500' },
@@ -121,7 +132,7 @@ const Skills: React.FC = () => {
         </Badge>
       </div>
 
-      <Tabs defaultValue="frontend" className="w-full">
+      <Tabs value={currentTab} onValueChange={setCurrentTab} className="w-full">
         <TabsList className="grid w-full grid-cols-6">
           <TabsTrigger value="frontend">Frontend</TabsTrigger>
           <TabsTrigger value="backend">Backend</TabsTrigger>
