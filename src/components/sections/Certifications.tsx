@@ -15,7 +15,8 @@ import {
   Globe,
   Code2,
   Database,
-  Shield
+  Shield,
+  Cloud
 } from 'lucide-react';
 
 const Certifications: React.FC = () => {
@@ -47,47 +48,21 @@ const Certifications: React.FC = () => {
       projects: 6
     },
     {
-      name: 'Higher Certificate in Software Development',
-      provider: 'STADIO Higher Education',
-      year: '2025-2026',
-      status: 'Enrolled',
-      progress: 15,
-      credentialId: 'STADIO-SD-2025',
-      expiryDate: 'No Expiry',
-      focus: [
-        'Software Development Methodologies',
-        'System Design and Architecture',
-        'Database Design and Management',
-        'Object-Oriented Programming',
-        'Web Application Development',
-        'Software Testing and Quality Assurance',
-        'Project Management in Software Development',
-        'Data Structures and Algorithms'
-      ],
-      skills: ['Software Design', 'System Architecture', 'Database Design', 'OOP'],
-      category: 'Software Development',
-      level: 'Intermediate',
-      hours: 720,
-      projects: 12
-    },
-    {
-      name: 'Full Stack Application Development',
+      name: 'Software Development Certificate',
       provider: 'Power Learn Project',
       year: '2022-2023',
       status: 'Completed',
       progress: 100,
-      credentialId: 'PLP-FSAD-2023-456',
+      credentialId: 'PLP-SD-2023',
       expiryDate: 'No Expiry',
       focus: [
-        'Python Programming Fundamentals',
-        'Django Framework Development',
-        'Database Design with SQL and NoSQL',
-        'Frontend Integration with HTML/CSS/JS',
-        'RESTful API Development',
-        'Version Control with Git',
-        'Deployment and DevOps Basics'
+        'Python and Django',
+        'Database (SQL and NoSQL)',
+        'Flutter and Dart',
+        'HTML, CSS and Javascript',
+        'Full-Stack Development'
       ],
-      skills: ['Python', 'Django', 'SQL', 'REST APIs', 'Git'],
+      skills: ['Python', 'Django', 'SQL', 'NoSQL', 'Flutter', 'Dart', 'HTML', 'CSS', 'Javascript'],
       category: 'Full Stack',
       level: 'Intermediate',
       hours: 180,
@@ -163,11 +138,11 @@ const Certifications: React.FC = () => {
     },
     {
       name: 'Professional Foundations',
-      provider: 'ALX',
+      provider: 'ALX Africa',
       year: '2024',
       status: 'Completed',
       progress: 100,
-      credentialId: 'ALX-PF-2024-789',
+      credentialId: 'ALX-PF-2024',
       expiryDate: 'No Expiry',
       focus: [
         'Professional Communication Skills',
@@ -182,6 +157,65 @@ const Certifications: React.FC = () => {
       level: 'Foundation',
       hours: 40,
       projects: 0
+    },
+    {
+      name: 'AI Generative Certificate',
+      provider: 'AWS (Udacity)',
+      year: '2024',
+      status: 'Completed',
+      progress: 100,
+      credentialId: 'AWS-AI-2024',
+      expiryDate: 'No Expiry',
+      focus: [
+        'Generative AI Fundamentals',
+        'AWS AI Services',
+        'AI Application Development',
+        'Machine Learning Basics'
+      ],
+      skills: ['Generative AI', 'AWS', 'AI Applications', 'Machine Learning'],
+      category: 'AI & Cloud',
+      level: 'Intermediate',
+      hours: 40,
+      projects: 2
+    },
+    {
+      name: 'Full-Stack Development',
+      provider: 'FNB (IT Varsity)',
+      year: '2023',
+      status: 'Completed',
+      progress: 100,
+      credentialId: 'FNB-FSD-2023',
+      expiryDate: 'No Expiry',
+      focus: [
+        'Full-Stack Development',
+        'Web Technologies',
+        'Application Development'
+      ],
+      skills: ['Full-Stack Development', 'Web Technologies'],
+      category: 'Full Stack',
+      level: 'Intermediate',
+      hours: 60,
+      projects: 3
+    },
+    {
+      name: 'Data Engineering',
+      provider: 'ALX Africa',
+      year: '2025',
+      status: 'In Progress',
+      progress: 25,
+      credentialId: 'ALX-DE-2025',
+      expiryDate: 'No Expiry',
+      focus: [
+        'Data Engineering',
+        'Data Analysis',
+        'ETL Processes',
+        'Data Pipelines'
+      ],
+      skills: ['Data Engineering', 'Data Analysis', 'ETL'],
+      category: 'Data Engineering',
+      level: 'Advanced',
+      hours: 120,
+      projects: 4
     }
   ];
 
@@ -210,6 +244,10 @@ const Certifications: React.FC = () => {
         return Database;
       case 'Professional Skills':
         return Star;
+      case 'AI & Cloud':
+        return Cloud;
+      case 'Data Engineering':
+        return Database;
       default:
         return Award;
     }

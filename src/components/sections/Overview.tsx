@@ -22,19 +22,28 @@ import {
 
 const Overview: React.FC = () => {
   const stats = [
-    { label: 'Years Experience', value: '4+', icon: Calendar },
-    { label: 'Projects Completed', value: '15+', icon: Trophy },
+    { label: 'Years Experience', value: '10+', icon: Calendar },
+    { label: 'Projects Completed', value: 'Multiple', icon: Trophy },
     { label: 'Technologies', value: '25+', icon: Star },
-    { label: 'Happy Clients', value: '50+', icon: Briefcase }
+    { label: 'Certifications', value: '7+', icon: Briefcase }
   ];
 
   const highlights = [
-    "Full Stack Developer with 4+ years of comprehensive experience",
-    "Proficient in React.js, Angular, Python/Django, and modern web technologies",
-    "Experience in agile environments and cross-functional team collaboration",
-    "Currently pursuing advanced certifications through ALX ProDev Program",
-    "Strong background in database design, API development, and cloud technologies"
+    "Dynamic and detail-oriented Full-stack and Mobile Developer with proven experience",
+    "Building cross-platform mobile applications using Flutter & Dart, React Native, and .NET (C#)",
+    "Expertise in frontend development (Angular, React.js) and backend integration (PHP, Laravel, Django, Flask, Python)",
+    "Strong background in SQL database design, cloud solutions (AWS), and rigorous testing practices",
+    "Passionate about modern frameworks, mobile-first innovation, and solving complex technical challenges"
   ];
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/documents/Portia Mashaba Resume.pdf';
+    link.download = 'Portia Mashaba Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="space-y-8">
@@ -53,24 +62,35 @@ const Overview: React.FC = () => {
                 Hi, I'm <span className="text-accent">Portia</span> Mashaba
               </h1>
               <p className="text-xl mb-6 opacity-90 font-medium">
-                Full Stack Developer & Problem Solver
+                Full-Stack Developer & Mobile Developer
               </p>
               <p className="text-lg opacity-80 leading-relaxed mb-8 max-w-2xl">
-                Passionate about creating innovative web solutions that bridge the gap between 
-                cutting-edge technology and exceptional user experiences. I specialize in building 
-                scalable applications that make a real impact in people's lives.
+                Dynamic and detail-oriented Full-stack and Mobile Developer with proven experience in building 
+                cross-platform mobile applications and scalable web solutions. Passionate about modern frameworks, 
+                mobile-first innovation, and solving complex technical challenges.
               </p>
               
               <div className="flex flex-wrap gap-3">
-                <Button className="bg-white text-primary hover:bg-slate-100 hover:scale-105 transition-all shadow-lg">
+                <Button 
+                  className="bg-white text-primary hover:bg-slate-100 hover:scale-105 transition-all shadow-lg"
+                  onClick={handleDownloadCV}
+                >
                   <Download className="h-4 w-4 mr-2" />
                   Download CV
                 </Button>
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                <Button 
+                  variant="outline" 
+                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                  onClick={() => window.open('https://github.com/Portia-Nelly-Mashaba', '_blank')}
+                >
                   <Github className="h-4 w-4 mr-2" />
                   GitHub Profile
                 </Button>
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                <Button 
+                  variant="outline" 
+                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                  onClick={() => window.open('https://www.linkedin.com/in/portia-mashaba-674a68131/', '_blank')}
+                >
                   <Linkedin className="h-4 w-4 mr-2" />
                   LinkedIn
                 </Button>
@@ -127,7 +147,7 @@ const Overview: React.FC = () => {
               <MapPin className="h-5 w-5 text-primary" />
               <div>
                 <div className="font-medium text-foreground">Location</div>
-                <div className="text-muted-foreground">Ivory Park, Midrand, South Africa</div>
+                <div className="text-muted-foreground">10695 Ivory Park, Midrand, 1685, South Africa</div>
               </div>
             </div>
             <div className="flex items-center space-x-3 p-3 rounded-lg bg-section-background/50">
@@ -143,19 +163,28 @@ const Overview: React.FC = () => {
               <Phone className="h-5 w-5 text-accent-secondary" />
               <div>
                 <div className="font-medium text-foreground">Phone</div>
-                <a href="tel:0815194600" className="text-muted-foreground hover:text-primary transition-colors">
-                  0815194600
+                <a href="tel:0781526964" className="text-muted-foreground hover:text-primary transition-colors">
+                  0781526964
                 </a>
               </div>
             </div>
             
             {/* Social Links */}
             <div className="flex space-x-3 pt-2">
-              <Button size="sm" className="bg-primary hover:bg-primary/90">
+              <Button 
+                size="sm" 
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => window.open('https://github.com/Portia-Nelly-Mashaba', '_blank')}
+              >
                 <Github className="h-4 w-4 mr-2" />
                 GitHub
               </Button>
-              <Button size="sm" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                onClick={() => window.open('https://www.linkedin.com/in/portia-mashaba-674a68131/', '_blank')}
+              >
                 <Linkedin className="h-4 w-4 mr-2" />
                 LinkedIn
               </Button>

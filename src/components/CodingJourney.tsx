@@ -13,63 +13,74 @@ import {
   Rocket,
   Star,
   Play,
-  Pause
+  Pause,
+  Briefcase
 } from 'lucide-react';
 
 const CodingJourney: React.FC = () => {
-  const [currentYear, setCurrentYear] = useState(2024);
+  const [currentYear, setCurrentYear] = useState(2025);
   const [isPlaying, setIsPlaying] = useState(false);
   const [animatedItems, setAnimatedItems] = useState(new Set());
 
   const journeyData = [
     {
-      year: 2020,
-      title: "The Beginning",
-      subtitle: "First Line of Code",
-      description: "Started my coding journey with HTML and CSS, building my first static website.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      achievement: "Built first portfolio website",
-      color: "bg-blue-500",
-      icon: Code2
-    },
-    {
-      year: 2021,
-      title: "Frontend Foundations",
-      subtitle: "React & Modern JS",
-      description: "Dove deep into React.js and modern JavaScript, creating interactive web applications.",
-      technologies: ["React.js", "ES6+", "Bootstrap", "Git"],
-      achievement: "Completed 5+ React projects",
+      year: 2013,
+      title: "IT Graduate",
+      subtitle: "NCV Level 4 Certificate",
+      description: "Completed NCV Level 4 in Information Technology and Computer Science at Ekurhuleni West College, focusing on Software Development and ICT fundamentals. This marked the beginning of my professional IT journey.",
+      technologies: ["Software Development", "ICT", "Programming Fundamentals", "Database Design"],
+      achievement: "NCV Level 4 Certificate - Ekurhuleni West College",
       color: "bg-cyan-500",
       icon: Rocket
     },
     {
-      year: 2022,
-      title: "Full Stack Development",
-      subtitle: "Backend & Databases",
-      description: "Expanded to backend development with Python Django and database management.",
-      technologies: ["Python", "Django", "MySQL", "REST APIs"],
-      achievement: "Built first full-stack application",
+      year: 2015,
+      title: "IT Development & Support",
+      subtitle: "Help Desk Agent, IT Development",
+      description: "Joined Ram Courier Transport as Help Desk Agent and IT Development resource. Specialized in mobile device application support, software testing, and data analysis. Contributed to maintaining internal systems, generating SQL reports using SSRS, and ensuring accurate operational data. Assisted in development and support of .NET (C#) and Python-based applications.",
+      technologies: ["SSRS", "SQL", ".NET (C#)", "Python", "Mobile Device Support", "Software Testing", "Bug Tracking", "API Integration"],
+      achievement: "Help Desk Agent, IT Development - Ram Courier Transport (2015-2020)",
       color: "bg-green-500",
-      icon: GitBranch
+      icon: Briefcase
     },
     {
-      year: 2023,
-      title: "Professional Growth",
-      subtitle: "Industry Experience",
-      description: "Started professional career, working on enterprise applications and agile teams.",
-      technologies: ["Angular", "Laravel", "Redis", "Docker"],
-      achievement: "Joined Mlab CodeTribe",
+      year: 2020,
+      title: "Development Focus",
+      subtitle: "Freelance Developer",
+      description: "Began freelance career at Tshikamisava Holdings, designing and delivering full-stack web and mobile solutions using Python, Django, React.js, Angular, React Native, Flutter, and Firebase.",
+      technologies: ["Python", "Django", "React.js", "Angular", "React Native", "Flutter", "Firebase"],
+      achievement: "Freelance Web & Mobile Developer - Tshikamisava Holdings",
       color: "bg-purple-500",
       icon: Trophy
     },
     {
+      year: 2023,
+      title: "Formal Training",
+      subtitle: "Software Development Certificate",
+      description: "Completed Software Development Certificate at Power Learn Project, mastering Python, Django, Database (SQL/NoSQL), Flutter, Dart, HTML, CSS, and JavaScript.",
+      technologies: ["Python", "Django", "SQL/NoSQL", "Flutter", "Dart", "HTML", "CSS", "JavaScript"],
+      achievement: "Software Development Certificate - Power Learn Project",
+      color: "bg-orange-500",
+      icon: Star
+    },
+    {
       year: 2024,
-      title: "Advanced Specialization",
-      subtitle: "Modern Architecture",
-      description: "Focusing on microservices, cloud technologies, and advanced development practices.",
-      technologies: ["Kubernetes", "Microservices", "GraphQL", "CI/CD"],
-      achievement: "ALX ProDev Program",
+      title: "Professional Growth",
+      subtitle: "Full Stack & Mobile Developer",
+      description: "Joined Mlab CodeTribe as Mobile & Web Developer, developing full-stack applications with React.js, React Native, Node.js, and Firebase. Also started at Siyakha Consulting as Full Stack Developer, working with Laravel, PHP, SQL, and CI/CD pipelines.",
+      technologies: ["React.js", "React Native", "Node.js", "Firebase", "Laravel", "PHP", "SQL", "CI/CD"],
+      achievement: "Mlab CodeTribe & Siyakha Consulting - Full Stack Developer",
       color: "bg-violet-500",
+      icon: Zap
+    },
+    {
+      year: 2025,
+      title: "Advanced Specialization",
+      subtitle: "ProDev Back-End Developer",
+      description: "Enrolled in ALX Africa ProDev Back-End Developer program, focusing on Advanced SQL, Python (Async, Generators, Decorators), Unit & Integration Testing, CI/CD, Docker, Kubernetes, Microservices, Redis, GraphQL, and Security Best Practices. Also enrolled in UNISA Diploma in Information Technology.",
+      technologies: ["Advanced SQL", "Python", "Docker", "Kubernetes", "Microservices", "Redis", "GraphQL", "CI/CD", "Security"],
+      achievement: "ALX ProDev Program & UNISA Diploma - Ongoing",
+      color: "bg-pink-500",
       icon: Star
     }
   ];
@@ -79,9 +90,9 @@ const CodingJourney: React.FC = () => {
       const interval = setInterval(() => {
         setCurrentYear(prev => {
           const nextYear = prev + 1;
-          if (nextYear > 2024) {
+          if (nextYear > 2025) {
             setIsPlaying(false);
-            return 2024;
+            return 2025;
           }
           setAnimatedItems(prev => new Set([...prev, nextYear]));
           return nextYear;
@@ -93,13 +104,13 @@ const CodingJourney: React.FC = () => {
   }, [isPlaying]);
 
   const handlePlayJourney = () => {
-    setCurrentYear(2020);
-    setAnimatedItems(new Set([2020]));
+    setCurrentYear(2013);
+    setAnimatedItems(new Set([2013]));
     setIsPlaying(true);
   };
 
   const resetJourney = () => {
-    setCurrentYear(2024);
+    setCurrentYear(2025);
     setAnimatedItems(new Set());
     setIsPlaying(false);
   };
@@ -230,20 +241,20 @@ const CodingJourney: React.FC = () => {
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold">4+</div>
-              <div className="text-sm opacity-90">Years Coding</div>
+              <div className="text-2xl font-bold">10+</div>
+              <div className="text-sm opacity-90">Years Experience</div>
             </div>
             <div>
               <div className="text-2xl font-bold">25+</div>
               <div className="text-sm opacity-90">Technologies</div>
             </div>
             <div>
-              <div className="text-2xl font-bold">15+</div>
-              <div className="text-sm opacity-90">Projects</div>
+              <div className="text-2xl font-bold">7+</div>
+              <div className="text-sm opacity-90">Certifications</div>
             </div>
             <div>
               <div className="text-2xl font-bold">∞</div>
-              <div className="text-sm opacity-90">Lines of Code</div>
+              <div className="text-sm opacity-90">Learning Journey</div>
             </div>
           </div>
         </CardContent>

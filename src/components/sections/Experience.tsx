@@ -16,91 +16,96 @@ import {
 const Experience: React.FC = () => {
   const workExperience = [
     {
-      company: 'Mlab CodeTribe',
-      role: 'Mobile & Web Developer (Trainee)',
-      period: 'May 2024 - May 2025',
-      location: 'Tembisa',
-      type: 'Current Position',
-      status: 'active',
-      description: 'Developing full-stack applications using modern frameworks including React.js, React Native, Node.js, and Firebase. Working extensively with REST APIs and practicing agile methodologies.',
-      achievements: [
-        'Built and deployed multiple full-stack applications with 99% uptime',
-        'Mastered React Native for cross-platform mobile development',
-        'Implemented agile practices including sprints, stand-ups, and code reviews',
-        'Gained expertise in Firebase integration and real-time database management',
-        'Contributed to team velocity improvement by 25% through code optimization'
-      ],
-      tech: ['React.js', 'React Native', 'Node.js', 'Firebase', 'REST APIs', 'Agile'],
-      metrics: {
-        projectsCompleted: 8,
-        performance: '98%',
-        teamSize: 6
-      }
-    },
-    {
-      company: 'Aveng Trident Steel',
-      role: 'Frontend & SQL Developer | Software Tester',
-      period: 'July 2024 - March 2025',
-      location: 'Germiston',
-      type: 'Contract',
-      status: 'completed',
-      description: 'Focused on Angular development, database optimization, and comprehensive testing strategies to improve system performance and reliability.',
-      achievements: [
-        'Developed responsive Angular interfaces improving user experience by 40%',
-        'Optimized SQL queries reducing database response time by 60%',
-        'Reduced system bugs by 45% through comprehensive testing protocols',
-        'Enhanced UI responsiveness across all supported browsers and devices',
-        'Implemented automated testing suite saving 20 hours per week'
-      ],
-      tech: ['Angular', 'SQL', 'TypeScript', 'Testing', 'Performance Optimization', 'SSRS'],
-      metrics: {
-        bugReduction: '45%',
-        performanceImprovement: '60%',
-        testCoverage: '85%'
-      }
-    },
-    {
       company: 'Siyakha Consulting',
-      role: 'Digital Developer Intern',
-      period: 'November 2020 - June 2023',
-      location: 'Sandton',
-      type: 'Internship',
+      role: 'Full Stack Developer',
+      period: 'May 2024 - November 2025',
+      location: 'Sandton - Remote',
+      type: 'Full-time',
       status: 'completed',
-      description: 'Comprehensive full-stack development experience using PHP and Laravel, with focus on quality assurance and collaborative development practices.',
+      description: 'Contributed to full-stack development using Laravel, PHP, and SQL, integrating APIs for complex business solutions. Collaborated on DevOps practices, including CI/CD pipeline setup, automated deployment, and environment configuration for streamlined delivery and system reliability. Worked within an Agile team using Git and Jira. Delivered responsive applications with PWA functionality. Performed QA testing, debugging, and code reviews.',
       achievements: [
-        'Completed 15+ full-stack development projects using Laravel framework',
-        'Performed extensive QA testing resulting in 30% fewer production bugs',
-        'Participated in code reviews improving team code quality standards',
-        'Ensured 100% cross-browser compatibility for all web applications',
-        'Mentored 3 junior developers in Laravel best practices'
+        'Contributed to full-stack development using Laravel, PHP, and SQL',
+        'Integrated APIs for complex business solutions',
+        'Collaborated on DevOps practices including CI/CD pipeline setup',
+        'Worked within an Agile team using Git and Jira',
+        'Delivered responsive applications with PWA functionality',
+        'Performed QA testing, debugging, and code reviews'
       ],
-      tech: ['Laravel', 'PHP', 'Git', 'Jira', 'QA Testing', 'MySQL'],
+      tech: ['Laravel', 'PHP', 'SQL', 'REST APIs', 'CI/CD', 'Git', 'Jira', 'PWA', 'QA Testing'],
       metrics: {
-        projectsDelivered: 15,
-        bugReduction: '30%',
-        mentees: 3
+        projectsCompleted: 'Multiple',
+        teamCollaboration: 'Agile',
+        qualityAssurance: 'Active'
+      }
+    },
+    {
+      company: 'Mlab CodeTribe',
+      role: 'Mobile & Web Developer',
+      period: 'July 2024 - March 2025',
+      location: 'Tembisa',
+      type: 'Trainee',
+      status: 'completed',
+      description: 'Developed and deployed full-stack applications using React.js, React Native, Node.js, and Firebase, with a strong focus on REST API integrations and microservices-based design. Gained exposure to PWA development, ensuring responsive and scalable web solutions. Participated in Agile practices (sprints, stand-ups) and collaborated in team environments to deliver production-ready applications.',
+      achievements: [
+        'Developed and deployed full-stack applications using React.js, React Native, Node.js, and Firebase',
+        'Focused on REST API integrations and microservices-based design',
+        'Gained exposure to PWA development',
+        'Participated in Agile practices (sprints, stand-ups)',
+        'Collaborated in team environments to deliver production-ready applications'
+      ],
+      tech: ['React.js', 'React Native', 'Node.js', 'Firebase', 'REST APIs', 'Microservices', 'PWA', 'Agile'],
+      metrics: {
+        applicationsDeployed: 'Multiple',
+        teamCollaboration: 'Agile',
+        productionReady: 'Yes'
+      }
+    },
+    {
+      company: 'Tshikamisava Holdings',
+      role: 'Freelance Web & Mobile Developer',
+      period: 'November 2020 - April 2024',
+      location: 'Remote',
+      type: 'Freelance',
+      status: 'completed',
+      description: 'Designed and delivered full-stack web and mobile solutions using Python, Django, React.js, Angular, React Native, Node.js, Flutter, and Firebase. Integrated REST APIs and SDKs and implemented PWA features to improve user experience across devices. Worked with SQL/NoSQL databases and applied microservices-driven design to build scalable applications. Participated in Agile practices, ensuring quality delivery through unit, integration, and functional testing. Contributed to projects involving data analysis and AI-driven features, ensuring solutions were efficient, secure, and production-ready.',
+      achievements: [
+        'Designed and delivered full-stack web and mobile solutions',
+        'Integrated REST APIs and SDKs',
+        'Implemented PWA features to improve user experience',
+        'Worked with SQL/NoSQL databases',
+        'Applied microservices-driven design to build scalable applications',
+        'Participated in Agile practices with quality delivery through testing',
+        'Contributed to projects involving data analysis and AI-driven features'
+      ],
+      tech: ['Python', 'Django', 'React.js', 'Angular', 'React Native', 'Node.js', 'Flutter', 'Firebase', 'REST APIs', 'SQL/NoSQL', 'Microservices', 'PWA', 'Agile'],
+      metrics: {
+        projectsDelivered: 'Multiple',
+        technologies: '10+',
+        qualityAssurance: 'Comprehensive'
       }
     },
     {
       company: 'Ram Courier Transport',
-      role: 'Help Desk Agent, IT Development',
+      role: 'Help Desk Agent, IT Development: First Line Support, Mobile Device Developer & Software Tester',
       period: 'August 2015 - September 2020',
       location: 'Isando',
       type: 'Full-time',
       status: 'completed',
-      description: 'Provided first-line support and helped maintain internal systems by generating SQL reports via SSRS. Supported software updates, logged and tracked bugs.',
+      description: 'Worked as a first-line support and IT development resource. Specialized in mobile device application support, software testing, and data analysis. Contributed to maintaining internal systems, generating SQL reports using SSRS, and ensuring accurate operational data for business teams. Assisted in the development and support of .NET (C#) and Python-based applications. Integrated APIs to enhance mobile and reporting solutions. Performed thorough bug tracking and validation. Collaborated with developers to deploy software updates, installations, and system enhancements. Ensured smooth business operations and reliable mobile application performance across the company.',
       achievements: [
-        'Maintained 99.5% system uptime through proactive monitoring',
-        'Generated 200+ automated SQL reports improving business intelligence',
-        'Resolved 95% of support tickets within SLA requirements',
-        'Implemented bug tracking system reducing issue resolution time by 35%',
-        'Trained 10+ staff members on new software implementations'
+        'Provided first-line support and IT development',
+        'Specialized in mobile device application support, software testing, and data analysis',
+        'Generated SQL reports using SSRS',
+        'Assisted in development and support of .NET (C#) and Python-based applications',
+        'Integrated APIs to enhance mobile and reporting solutions',
+        'Performed thorough bug tracking and validation',
+        'Collaborated with developers to deploy software updates and system enhancements'
       ],
-      tech: ['SSRS', 'SQL', 'System Administration', 'Bug Tracking', 'Technical Support'],
+      tech: ['SSRS', 'SQL', '.NET (C#)', 'Python', 'Mobile Device Support', 'Software Testing', 'Bug Tracking', 'API Integration'],
       metrics: {
-        uptime: '99.5%',
-        ticketResolution: '95%',
-        staffTrained: 10
+        systemUptime: 'Maintained',
+        reportsGenerated: 'Multiple',
+        supportProvided: 'First Line'
       }
     },
     {
@@ -110,32 +115,24 @@ const Experience: React.FC = () => {
       location: 'Roodepoort',
       type: 'Full-time',
       status: 'completed',
-      description: 'Responsible for general IT support, including software installations, troubleshooting, and ensuring seamless daily operations for the office.',
+      description: 'Responsible for general IT support, including software installations and troubleshooting. Ensured seamless daily operations for the office.',
       achievements: [
-        'Maintained IT infrastructure for 50+ employees',
-        'Implemented new backup systems reducing data loss risk by 90%',
-        'Streamlined software installation processes saving 5 hours per week',
-        'Provided technical training to staff improving productivity by 25%',
-        'Managed inventory and procurement of IT equipment'
+        'Provided general IT support',
+        'Handled software installations and troubleshooting',
+        'Ensured seamless daily operations for the office'
       ],
-      tech: ['Windows Administration', 'Network Management', 'Hardware Support', 'Software Installation'],
+      tech: ['IT Support', 'Software Installation', 'Troubleshooting', 'Office Administration'],
       metrics: {
-        employeesSupported: 50,
-        dataLossReduction: '90%',
-        productivityIncrease: '25%'
+        operationsMaintained: 'Daily',
+        supportProvided: 'General IT'
       }
     }
   ];
 
   const StatusBadge = ({ status }) => {
-    const colors = {
-      active: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
-      completed: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
-    };
-    
     return (
-      <Badge className={colors[status]}>
-        {status === 'active' ? 'Current' : 'Completed'}
+      <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300">
+        Completed
       </Badge>
     );
   };
@@ -145,7 +142,7 @@ const Experience: React.FC = () => {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Professional Experience</h1>
         <Badge variant="secondary" className="bg-violet-100 dark:bg-violet-900 text-violet-700 dark:text-violet-300">
-          9+ Years Experience
+          10+ Years Experience
         </Badge>
       </div>
 

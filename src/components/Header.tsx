@@ -10,11 +10,23 @@ import {
   Bell, 
   Settings,
   Plus,
-  History
+  History,
+  Download,
+  Github,
+  Linkedin
 } from 'lucide-react';
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/documents/Portia Mashaba Resume.pdf';
+    link.download = 'Portia Mashaba Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <header className="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-6">
@@ -23,7 +35,7 @@ const Header: React.FC = () => {
           <div className="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">PM</span>
           </div>
-          <span className="font-semibold text-slate-900 dark:text-white">Portfolio Dashboard</span>
+          <span className="font-semibold text-slate-900 dark:text-white">Portia Mashaba Portfolio</span>
         </div>
       </div>
 
@@ -38,24 +50,43 @@ const Header: React.FC = () => {
       </div>
 
       <div className="flex items-center space-x-2">
-        <Button variant="ghost" size="sm" className="text-slate-600 dark:text-slate-300">
-          <Plus className="h-4 w-4" />
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="text-slate-600 dark:text-slate-300"
+          onClick={handleDownloadCV}
+          title="Download CV"
+        >
+          <Download className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="sm" className="text-slate-600 dark:text-slate-300">
-          <Bell className="h-4 w-4" />
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="text-slate-600 dark:text-slate-300"
+          onClick={() => window.open('https://github.com/Portia-Nelly-Mashaba', '_blank')}
+          title="GitHub Profile"
+        >
+          <Github className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="sm" className="text-slate-600 dark:text-slate-300">
-          <History className="h-4 w-4" />
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="text-slate-600 dark:text-slate-300"
+          onClick={() => window.open('https://www.linkedin.com/in/portia-mashaba-674a68131/', '_blank')}
+          title="LinkedIn Profile"
+        >
+          <Linkedin className="h-4 w-4" />
         </Button>
         <Button 
           variant="ghost" 
           size="sm" 
           onClick={toggleTheme}
           className="text-slate-600 dark:text-slate-300"
+          title="Toggle Theme"
         >
           {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
         </Button>
-        <Button variant="ghost" size="sm" className="text-slate-600 dark:text-slate-300">
+        <Button variant="ghost" size="sm" className="text-slate-600 dark:text-slate-300" title="Settings">
           <Settings className="h-4 w-4" />
         </Button>
       </div>

@@ -17,23 +17,23 @@ import {
 
 const Skills: React.FC = () => {
   const frontendSkills = [
-    { name: 'React.js', level: 92, experience: '3+ years', color: 'bg-blue-500' },
-    { name: 'Angular', level: 88, experience: '2+ years', color: 'bg-red-500' },
-    { name: 'JavaScript/TypeScript', level: 90, experience: '4+ years', color: 'bg-yellow-500' },
-    { name: 'HTML/CSS', level: 95, experience: '5+ years', color: 'bg-orange-500' },
+    { name: 'React.js', level: 92, experience: '5+ years', color: 'bg-blue-500' },
+    { name: 'Angular', level: 88, experience: '5+ years', color: 'bg-red-500' },
+    { name: 'JavaScript/TypeScript', level: 90, experience: '12+ years', color: 'bg-yellow-500' },
+    { name: 'HTML/CSS', level: 95, experience: '12+ years', color: 'bg-orange-500' },
     { name: 'Tailwind CSS', level: 90, experience: '3+ years', color: 'bg-cyan-500' },
-    { name: 'Vue.js', level: 75, experience: '1+ years', color: 'bg-green-500' },
-    { name: 'SASS/SCSS', level: 88, experience: '3+ years', color: 'bg-pink-500' },
-    { name: 'Bootstrap', level: 85, experience: '4+ years', color: 'bg-purple-500' }
+    { name: 'PWA', level: 88, experience: '5+ years', color: 'bg-green-500' },
+    { name: 'Responsive Design', level: 92, experience: '10+ years', color: 'bg-pink-500' },
+    { name: 'Bootstrap', level: 85, experience: '7 years', color: 'bg-purple-500' }
   ];
 
   const backendSkills = [
-    { name: 'Python/Django', level: 90, experience: '3+ years', color: 'bg-green-500' },
-    { name: 'PHP/Laravel', level: 85, experience: '3+ years', color: 'bg-purple-500' },
-    { name: 'Node.js', level: 80, experience: '2+ years', color: 'bg-green-600' },
-    { name: 'REST APIs', level: 88, experience: '3+ years', color: 'bg-indigo-500' },
+    { name: 'Python/Django', level: 90, experience: '10+ years', color: 'bg-green-500' },
+    { name: 'PHP/Laravel', level: 85, experience: '4 years', color: 'bg-purple-500' },
+    { name: 'Node.js', level: 80, experience: '4 years', color: 'bg-green-600' },
+    { name: 'REST APIs', level: 88, experience: '5+ years', color: 'bg-indigo-500' },
     { name: 'GraphQL', level: 75, experience: '1+ years', color: 'bg-pink-600' },
-    { name: 'Express.js', level: 78, experience: '2+ years', color: 'bg-gray-600' }
+    { name: '.NET (C#)', level: 82, experience: '7 years', color: 'bg-gray-600' }
   ];
 
   const designSkills = [
@@ -46,38 +46,38 @@ const Skills: React.FC = () => {
   ];
 
   const databaseSkills = [
-    { name: 'SQL/MySQL', level: 92, experience: '4+ years', color: 'bg-blue-600' },
-    { name: 'NoSQL/MongoDB', level: 78, experience: '2+ years', color: 'bg-green-700' },
-    { name: 'Redis', level: 75, experience: '1+ years', color: 'bg-red-600' },
-    { name: 'Database Design', level: 88, experience: '3+ years', color: 'bg-purple-600' },
-    { name: 'Query Optimization', level: 85, experience: '3+ years', color: 'bg-indigo-600' },
-    { name: 'SSRS Reporting', level: 80, experience: '2+ years', color: 'bg-yellow-600' }
+    { name: 'SQL/MySQL', level: 92, experience: '10+ years', color: 'bg-blue-600' },
+    { name: 'NoSQL/MongoDB', level: 78, experience: '4 years', color: 'bg-green-700' },
+    { name: 'PostgreSQL', level: 80, experience: '5+ years', color: 'bg-red-600' },
+    { name: 'Database Design', level: 88, experience: '10+ years', color: 'bg-purple-600' },
+    { name: 'Query Optimization', level: 85, experience: '10+ years', color: 'bg-indigo-600' },
+    { name: 'SSRS Reporting', level: 85, experience: '10+ years', color: 'bg-yellow-600' }
   ];
 
   const devOpsSkills = [
-    { name: 'Git/GitHub', level: 90, experience: '4+ years', color: 'bg-gray-700' },
+    { name: 'Git/GitHub', level: 90, experience: '5+ years', color: 'bg-gray-700' },
     { name: 'Docker', level: 75, experience: '1+ years', color: 'bg-blue-700' },
     { name: 'Kubernetes', level: 70, experience: '1+ years', color: 'bg-blue-800' },
     { name: 'CI/CD Pipelines', level: 78, experience: '2+ years', color: 'bg-green-800' },
-    { name: 'Jenkins', level: 72, experience: '1+ years', color: 'bg-orange-700' },
-    { name: 'Firebase', level: 82, experience: '2+ years', color: 'bg-yellow-700' }
+    { name: 'GitHub Actions', level: 75, experience: '1+ years', color: 'bg-orange-700' },
+    { name: 'Firebase', level: 82, experience: '5+ years', color: 'bg-yellow-700' }
   ];
 
   const mobileSkills = [
-    { name: 'React Native', level: 85, experience: '2+ years', color: 'bg-cyan-600' },
-    { name: 'Flutter/Dart', level: 78, experience: '1+ years', color: 'bg-blue-400' },
-    { name: 'Mobile UI/UX', level: 82, experience: '2+ years', color: 'bg-pink-600' },
-    { name: 'App Store Deployment', level: 75, experience: '1+ years', color: 'bg-gray-600' },
-    { name: 'AsyncStorage', level: 80, experience: '2+ years', color: 'bg-purple-700' }
+    { name: 'React Native', level: 85, experience: '5+ years', color: 'bg-cyan-600' },
+    { name: 'Flutter/Dart', level: 78, experience: '5+ years', color: 'bg-blue-400' },
+    { name: 'Mobile Device APIs', level: 82, experience: '10+ years', color: 'bg-pink-600' },
+    { name: '.NET (C#) Mobile', level: 75, experience: '7 years', color: 'bg-gray-600' },
+    { name: 'AsyncStorage', level: 80, experience: '5+ years', color: 'bg-purple-700' }
   ];
 
   const testingSkills = [
-    { name: 'Unit Testing', level: 85, experience: '3+ years', color: 'bg-emerald-600' },
-    { name: 'Integration Testing', level: 82, experience: '2+ years', color: 'bg-teal-600' },
-    { name: 'Functional Testing', level: 88, experience: '3+ years', color: 'bg-lime-600' },
-    { name: 'PyTest', level: 80, experience: '2+ years', color: 'bg-green-700' },
-    { name: 'QA Testing', level: 90, experience: '4+ years', color: 'bg-cyan-700' },
-    { name: 'Bug Tracking', level: 85, experience: '3+ years', color: 'bg-red-700' }
+    { name: 'Unit Testing', level: 85, experience: '5+ years', color: 'bg-emerald-600' },
+    { name: 'Integration Testing', level: 82, experience: '5+ years', color: 'bg-teal-600' },
+    { name: 'Functional Testing', level: 88, experience: '10+ years', color: 'bg-lime-600' },
+    { name: 'PyTest', level: 80, experience: '1+ years', color: 'bg-green-700' },
+    { name: 'QA Testing', level: 90, experience: '10+ years', color: 'bg-cyan-700' },
+    { name: 'Bug Tracking', level: 85, experience: '10+ years', color: 'bg-red-700' }
   ];
 
   const SkillCategory = ({ skills, icon: Icon, title }) => (

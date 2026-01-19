@@ -36,6 +36,15 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
     { id: 'certifications', label: 'Certifications', icon: Award },
   ];
 
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/documents/Portia Mashaba Resume.pdf';
+    link.download = 'Portia Mashaba Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const folders = [
     { name: 'Frontend', count: 8, color: 'bg-blue-500' },
     { name: 'Backend', count: 6, color: 'bg-green-500' },
@@ -60,7 +69,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
         <div className="space-y-2 text-sm">
           <div className="flex items-center text-slate-400">
             <MapPin className="h-3 w-3 mr-2" />
-            Ivory Park, Midrand
+            10695 Ivory Park, Midrand, 1685
           </div>
           <div className="flex items-center text-slate-400">
             <Mail className="h-3 w-3 mr-2" />
@@ -68,7 +77,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
           </div>
           <div className="flex items-center text-slate-400">
             <Phone className="h-3 w-3 mr-2" />
-            0815194600
+            0781526964
           </div>
         </div>
       </div>
@@ -120,17 +129,29 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
         <div>
           <h3 className="text-slate-400 text-xs uppercase tracking-wider mb-3">Quick Actions</h3>
           <div className="space-y-2">
-            <Button variant="ghost" className="w-full justify-start h-8 text-slate-300 hover:text-white hover:bg-slate-800">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start h-8 text-slate-300 hover:text-white hover:bg-slate-800"
+              onClick={handleDownloadCV}
+            >
               <FileText className="h-3 w-3 mr-2" />
               <span className="text-xs">Download CV</span>
             </Button>
-            <Button variant="ghost" className="w-full justify-start h-8 text-slate-300 hover:text-white hover:bg-slate-800">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start h-8 text-slate-300 hover:text-white hover:bg-slate-800"
+              onClick={() => window.open('https://github.com/Portia-Nelly-Mashaba', '_blank')}
+            >
               <Github className="h-3 w-3 mr-2" />
               <span className="text-xs">GitHub Profile</span>
             </Button>
-            <Button variant="ghost" className="w-full justify-start h-8 text-slate-300 hover:text-white hover:bg-slate-800">
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start h-8 text-slate-300 hover:text-white hover:bg-slate-800"
+              onClick={() => window.open('https://www.linkedin.com/in/portia-mashaba-674a68131/', '_blank')}
+            >
               <ExternalLink className="h-3 w-3 mr-2" />
-              <span className="text-xs">Live Portfolio</span>
+              <span className="text-xs">LinkedIn</span>
             </Button>
           </div>
         </div>

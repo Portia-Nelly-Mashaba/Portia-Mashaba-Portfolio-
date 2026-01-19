@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Badge } from '@/components/ui/badge';
 import { Terminal, ChevronRight } from 'lucide-react';
 
 interface TerminalLine {
@@ -54,10 +55,11 @@ const SmartTerminal: React.FC = () => {
 
   const portfolioData: PortfolioData = {
     about: [
-      'Passionate Full Stack Developer with 4+ years of comprehensive experience',
-      'Currently advancing skills through ALX ProDev Back-End Developer program',
-      'Experience in agile environments and cross-functional team collaboration',
-      'Strong background in database design, API development, and cloud technologies'
+      'Dynamic and detail-oriented Full-stack and Mobile Developer with proven experience',
+      'Building cross-platform mobile applications using Flutter & Dart, React Native, and .NET (C#)',
+      'Expertise in frontend development (Angular, React.js) and backend integration (PHP, Laravel, Django, Flask, Python)',
+      'Strong background in SQL database design, cloud solutions (AWS), and rigorous testing practices',
+      'Passionate about modern frameworks, mobile-first innovation, and solving complex technical challenges'
     ],
     skills: {
       frontend: ['React.js', 'Angular', 'JavaScript/TypeScript', 'HTML/CSS', 'Tailwind CSS', 'Vue.js'],
@@ -87,36 +89,49 @@ const SmartTerminal: React.FC = () => {
     ],
     experience: [
       {
-        company: 'Mlab CodeTribe',
-        role: 'Mobile & Web Developer (Trainee)',
-        period: 'May 2024 - May 2025',
+        company: 'Siyakha Consulting',
+        role: 'Full Stack Developer',
+        period: 'May 2024 - November 2025',
         achievements: [
-          'Built and deployed multiple full-stack applications with 99% uptime',
-          'Mastered React Native for cross-platform mobile development',
-          'Implemented agile practices improving team velocity by 25%'
+          'Full-stack development using Laravel, PHP, and SQL',
+          'Integrated APIs for complex business solutions',
+          'DevOps practices including CI/CD pipeline setup',
+          'Worked within Agile team using Git and Jira'
         ]
       },
       {
-        company: 'Aveng Trident Steel',
-        role: 'Frontend & SQL Developer | Software Tester',
+        company: 'Mlab CodeTribe',
+        role: 'Mobile & Web Developer',
         period: 'July 2024 - March 2025',
         achievements: [
-          'Developed responsive Angular interfaces improving UX by 40%',
-          'Optimized SQL queries reducing database response time by 60%'
+          'Developed full-stack applications using React.js, React Native, Node.js, and Firebase',
+          'REST API integrations and microservices-based design',
+          'PWA development for responsive and scalable solutions'
+        ]
+      },
+      {
+        company: 'Tshikamisava Holdings',
+        role: 'Freelance Web & Mobile Developer',
+        period: 'November 2020 - April 2024',
+        achievements: [
+          'Designed full-stack web and mobile solutions',
+          'Integrated REST APIs and SDKs',
+          'Worked with SQL/NoSQL databases and microservices'
         ]
       }
     ],
     education: [
-      'Higher Certificate in Software Development - STADIO (In Progress)',
-      'Full Stack Web Development Certification - ALX Africa',
-      'MERN Stack Development - Specialized Training',
-      'CompTIA IT Fundamentals+ Certification'
+      'ProDev Back-End Developer - ALX Africa (2025)',
+      'Diploma in Information Technology - UNISA (2025-2027)',
+      'Software Development Certificate - Power Learn Project (2022-2023)',
+      'NCV Level 4: Information Technology and Computer Science - Ekurhuleni West College (2011-2013)',
+      'Matric (Grade 12) Certificate - Bokamoso Secondary School (2004-2008)'
     ],
     contact: {
-      email: 'portia.dev@email.com',
-      linkedin: 'linkedin.com/in/portia-developer',
-      github: 'github.com/portia',
-      location: 'Johannesburg, South Africa'
+      email: 'pnpnelly@gmail.com',
+      linkedin: 'linkedin.com/in/portia-mashaba-674a68131',
+      github: 'github.com/Portia-Nelly-Mashaba',
+      location: '10695 Ivory Park, Midrand, 1685, South Africa'
     }
   };
 
@@ -274,19 +289,21 @@ Status: ${project?.status}`;
     }
   }, [history]);
 
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
+  // Input is disabled - no auto-focus needed
 
   return (
     <Card className="h-full bg-slate-900 border-slate-700 text-green-400 font-mono">
       <CardHeader className="pb-2">
-        <CardTitle className="flex items-center text-green-400 text-sm">
-          <Terminal className="h-4 w-4 mr-2" />
-          Smart-AI Terminal
-        </CardTitle>
+        <div className="flex items-center justify-between">
+          <CardTitle className="flex items-center text-green-400 text-sm">
+            <Terminal className="h-4 w-4 mr-2" />
+            Smart-AI Terminal
+          </CardTitle>
+          <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50 text-xs">
+            Coming Soon
+          </Badge>
+        </div>
+        <p className="text-xs text-slate-400 mt-2">This feature is under development and will be modified</p>
       </CardHeader>
       
       <CardContent className="p-0 h-[calc(100%-4rem)]">
@@ -301,20 +318,20 @@ Status: ${project?.status}`;
               </div>
             ))}
             
-            {/* Current command line */}
-            <div className="flex items-center text-green-400 font-bold">
+            {/* Current command line - Disabled */}
+            <div className="flex items-center text-green-400 font-bold opacity-50">
               <span className="text-sm mr-2">portia@terminal:{currentPath}$</span>
               <div className="flex-1 relative">
                 <Input
                   ref={inputRef}
-                  value={currentCommand}
-                  onChange={(e) => setCurrentCommand(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  className="bg-transparent border-none text-green-400 font-mono text-sm p-0 focus:ring-0 focus:outline-none"
-                  placeholder="Type a command..."
+                  value=""
+                  disabled
+                  readOnly
+                  className="bg-transparent border-none text-green-400 font-mono text-sm p-0 focus:ring-0 focus:outline-none cursor-not-allowed"
+                  placeholder="Terminal disabled - Coming Soon"
                   autoComplete="off"
                 />
-                <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-4 bg-green-400 animate-pulse"></div>
+                <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-4 bg-green-400/50"></div>
               </div>
             </div>
           </div>

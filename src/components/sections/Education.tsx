@@ -16,71 +16,108 @@ import {
 const Education: React.FC = () => {
   const education = [
     {
-      institution: 'STADIO Higher Education',
-      degree: 'Higher Certificate in Software Development',
-      period: '2025 - 2026',
+      institution: 'ALX Africa',
+      degree: 'ProDev Back-End Developer',
+      period: '2025',
+      location: 'Online',
+      status: 'in_progress',
+      progress: 75,
+      description: 'Advanced SQL, Python Programming (Async, Generators, Decorators), Unit & Integration Testing (Pytest), CI/CD Pipelines (GitHub Actions, Jenkins), Docker & Kubernetes, Microservices Architecture, Redis, GraphQL, Network Traffic Analysis, and Security Best Practices (SQL Injection, JWT, OAuth, API Security).',
+      majors: ['Advanced SQL', 'Python Programming', 'Unit & Integration Testing', 'CI/CD Pipelines', 'Docker & Kubernetes', 'Microservices Architecture', 'Redis', 'GraphQL', 'Network Traffic Analysis', 'Security Best Practices'],
+      gpa: 'In Progress',
+      credits: 'Ongoing',
+      highlights: [
+        'Advanced SQL and Python Programming with Async, Generators, Decorators',
+        'Unit & Integration Testing with Pytest',
+        'CI/CD Pipelines (GitHub Actions, Jenkins)',
+        'Docker & Kubernetes Container Orchestration',
+        'Microservices Architecture Design',
+        'Redis Caching and Session Management',
+        'GraphQL API Development',
+        'Network Traffic Analysis and Monitoring',
+        'Security Best Practices (SQL Injection, JWT, OAuth, API Security)'
+      ]
+    },
+    {
+      institution: 'University of South Africa (UNISA)',
+      degree: 'Diploma in Information Technology',
+      period: '2025 - 2027',
       location: 'Online',
       status: 'enrolled',
-      progress: 15,
-      description: 'Comprehensive program focusing on software development principles, system design, and modern programming practices.',
-      majors: ['Software Development', 'System Design', 'Database Architecture', 'Project Management'],
+      progress: 10,
+      description: 'Majors: Software Development and System Design',
+      majors: ['Software Development', 'System Design'],
       gpa: 'In Progress',
-      credits: 120,
+      credits: 'Ongoing',
       highlights: [
-        'Advanced software architecture and design patterns',
-        'Enterprise-level application development',
-        'Database design and optimization techniques',
-        'Agile project management methodologies',
-        'Software testing and quality assurance'
+        'Software Development methodologies',
+        'System Design and Architecture',
+        'Information Technology fundamentals',
+        'Professional development in IT'
+      ]
+    },
+    {
+      institution: 'Power Learn Project',
+      degree: 'Software Development Certificate',
+      period: '2022 - 2023',
+      location: 'Online',
+      status: 'completed',
+      progress: 100,
+      description: 'Majors: Python and Django, Database (SQL and NoSQL), Flutter and Dart, HTML, CSS and Javascript',
+      majors: ['Python', 'Django', 'Database (SQL and NoSQL)', 'Flutter', 'Dart', 'HTML', 'CSS', 'Javascript'],
+      gpa: 'Completed',
+      credits: 'Full Qualification',
+      highlights: [
+        'Python and Django framework development',
+        'Database design with SQL and NoSQL',
+        'Flutter and Dart mobile development',
+        'HTML, CSS and JavaScript frontend development',
+        'Full-stack application development'
       ]
     },
     {
       institution: 'Ekurhuleni West College',
-      degree: 'NCV Level 4 Certificate in Software Development',
+      degree: 'NCV Level 4: Information Technology and Computer Science',
       period: '2011 - 2013',
-      location: 'Germiston',
+      location: 'Ekurhuleni',
       status: 'completed',
       progress: 100,
-      description: 'National Certificate Vocational program covering fundamental software development concepts and ICT principles.',
-      majors: ['Software Development', 'Information Communication Technology', 'Programming Fundamentals', 'Database Design'],
-      gpa: '3.8/4.0',
-      credits: 180,
+      description: 'Majors: Software Development and ICT',
+      majors: ['Software Development', 'Information Communication Technology'],
+      gpa: 'Completed',
+      credits: 'Full Qualification',
       highlights: [
-        'Programming fundamentals in multiple languages',
-        'Database design and implementation',
-        'ICT infrastructure and networking basics',
-        'Software development lifecycle understanding',
-        'Problem-solving and analytical thinking'
+        'Software Development fundamentals',
+        'Information Communication Technology',
+        'Programming basics',
+        'Computer Science principles'
       ]
     },
     {
       institution: 'Bokamoso Secondary School',
-      degree: 'Matric Certificate (Grade 12)',
+      degree: 'Matric (Grade 12) Certificate',
       period: '2004 - 2008',
       location: 'Tembisa',
       status: 'completed',
       progress: 100,
-      description: 'Secondary education with focus on Mathematics, Physical Sciences, and Computer Applications Technology.',
-      majors: ['Mathematics', 'Physical Sciences', 'Computer Applications Technology', 'English'],
-      gpa: 'Bachelor\'s Pass',
+      description: 'Secondary education completion',
+      majors: ['Grade 12 Subjects'],
+      gpa: 'Completed',
       credits: 'Full Qualification',
       highlights: [
-        'Strong foundation in mathematics and sciences',
-        'Early exposure to computer applications',
-        'Developed analytical and problem-solving skills',
-        'Leadership roles in student organizations',
-        'Academic excellence in STEM subjects'
+        'Secondary education completion',
+        'Foundation for further studies'
       ]
     }
   ];
 
   const onlineCourses = [
     {
-      platform: 'Power Learn Project',
-      course: 'Full Stack Application Development',
-      period: '2022 - 2023',
+      platform: 'ALX Africa',
+      course: 'Professional Foundations',
+      period: '2024',
       status: 'completed',
-      focus: ['Python', 'Django', 'Database Design', 'Web Development'],
+      focus: ['Professional Communication', 'Team Collaboration', 'Leadership', 'Problem Solving'],
       certification: true,
       rating: 4.9
     },
@@ -95,7 +132,7 @@ const Education: React.FC = () => {
     },
     {
       platform: 'Udemy',
-      course: 'Laravel Development Mastery',
+      course: 'Laravel Development',
       period: '2022',
       status: 'completed',
       focus: ['Laravel', 'PHP', 'MVC Architecture', 'API Development'],
@@ -104,18 +141,46 @@ const Education: React.FC = () => {
     },
     {
       platform: 'Udemy',
-      course: 'MySQL Database Administration',
+      course: 'MySQL Mastery',
       period: '2023',
       status: 'completed',
       focus: ['MySQL', 'Query Optimization', 'Database Security', 'Performance Tuning'],
       certification: true,
       rating: 4.9
+    },
+    {
+      platform: 'AWS (Udacity)',
+      course: 'AI Generative Certificate',
+      period: '2024',
+      status: 'completed',
+      focus: ['Generative AI', 'AWS Services', 'AI Applications'],
+      certification: true,
+      rating: 4.8
+    },
+    {
+      platform: 'FNB (IT Varsity)',
+      course: 'Full-Stack Development',
+      period: '2023',
+      status: 'completed',
+      focus: ['Full-Stack Development', 'Web Technologies'],
+      certification: true,
+      rating: 4.7
+    },
+    {
+      platform: 'ALX Africa',
+      course: 'Data Engineering',
+      period: '2025',
+      status: 'in_progress',
+      focus: ['Data Engineering', 'Data Analysis', 'ETL Processes'],
+      certification: false,
+      rating: 0
     }
   ];
 
   const getStatusColor = (status) => {
     switch (status) {
       case 'enrolled':
+      case 'in_progress':
         return 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300';
       case 'completed':
         return 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300';
@@ -165,7 +230,7 @@ const Education: React.FC = () => {
                     </div>
                   </div>
                   <Badge className={getStatusColor(edu.status)}>
-                    {edu.status === 'enrolled' ? 'Current' : 'Completed'}
+                    {edu.status === 'enrolled' || edu.status === 'in_progress' ? 'Current' : 'Completed'}
                   </Badge>
                 </div>
               </CardHeader>
@@ -176,7 +241,7 @@ const Education: React.FC = () => {
                   </p>
 
                   {/* Progress for current studies */}
-                  {edu.status === 'enrolled' && (
+                  {(edu.status === 'enrolled' || edu.status === 'in_progress') && (
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-sm font-medium text-slate-900 dark:text-white">Progress</span>
@@ -199,7 +264,7 @@ const Education: React.FC = () => {
                     <div className="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg">
                       <div className="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider">Status</div>
                       <div className="text-lg font-bold text-slate-900 dark:text-white">
-                        {edu.status === 'enrolled' ? 'Active' : 'Graduate'}
+                        {edu.status === 'enrolled' || edu.status === 'in_progress' ? 'Active' : 'Graduate'}
                       </div>
                     </div>
                   </div>

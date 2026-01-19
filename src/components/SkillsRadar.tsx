@@ -18,28 +18,52 @@ const SkillsRadar: React.FC = () => {
 
   const skillCategories = {
     overall: [
-      { skill: 'Frontend', level: 92, fullMark: 100 },
+      { skill: 'Frontend', level: 90, fullMark: 100 },
       { skill: 'Backend', level: 88, fullMark: 100 },
       { skill: 'Database', level: 85, fullMark: 100 },
-      { skill: 'DevOps', level: 75, fullMark: 100 },
-      { skill: 'Mobile', level: 82, fullMark: 100 },
+      { skill: 'Mobile', level: 85, fullMark: 100 },
+      { skill: 'Cloud/DevOps', level: 75, fullMark: 100 },
       { skill: 'Testing', level: 87, fullMark: 100 },
     ],
     frontend: [
-      { skill: 'React', level: 92, fullMark: 100 },
+      { skill: 'React.js', level: 90, fullMark: 100 },
       { skill: 'Angular', level: 88, fullMark: 100 },
-      { skill: 'Vue', level: 75, fullMark: 100 },
-      { skill: 'TypeScript', level: 90, fullMark: 100 },
-      { skill: 'CSS/SASS', level: 95, fullMark: 100 },
+      { skill: 'HTML/CSS', level: 95, fullMark: 100 },
+      { skill: 'JavaScript', level: 90, fullMark: 100 },
+      { skill: 'PWA', level: 85, fullMark: 100 },
       { skill: 'Responsive', level: 92, fullMark: 100 },
     ],
     backend: [
       { skill: 'Python', level: 90, fullMark: 100 },
-      { skill: 'PHP', level: 85, fullMark: 100 },
+      { skill: 'Django', level: 88, fullMark: 100 },
+      { skill: 'PHP/Laravel', level: 85, fullMark: 100 },
       { skill: 'Node.js', level: 80, fullMark: 100 },
-      { skill: 'APIs', level: 88, fullMark: 100 },
+      { skill: 'REST APIs', level: 88, fullMark: 100 },
       { skill: 'GraphQL', level: 75, fullMark: 100 },
-      { skill: 'Microservices', level: 70, fullMark: 100 },
+    ],
+    mobile: [
+      { skill: 'React Native', level: 85, fullMark: 100 },
+      { skill: 'Flutter/Dart', level: 80, fullMark: 100 },
+      { skill: '.NET (C#)', level: 75, fullMark: 100 },
+      { skill: 'Mobile APIs', level: 80, fullMark: 100 },
+      { skill: 'Cross-Platform', level: 85, fullMark: 100 },
+      { skill: 'Firebase', level: 82, fullMark: 100 },
+    ],
+    database: [
+      { skill: 'SQL/MySQL', level: 92, fullMark: 100 },
+      { skill: 'PostgreSQL', level: 80, fullMark: 100 },
+      { skill: 'NoSQL', level: 78, fullMark: 100 },
+      { skill: 'SSRS', level: 85, fullMark: 100 },
+      { skill: 'Database Design', level: 88, fullMark: 100 },
+      { skill: 'Query Optimization', level: 85, fullMark: 100 },
+    ],
+    cloud: [
+      { skill: 'AWS Services', level: 75, fullMark: 100 },
+      { skill: 'CI/CD', level: 78, fullMark: 100 },
+      { skill: 'Docker', level: 75, fullMark: 100 },
+      { skill: 'Kubernetes', level: 70, fullMark: 100 },
+      { skill: 'Git/GitHub', level: 90, fullMark: 100 },
+      { skill: 'Infrastructure', level: 72, fullMark: 100 },
     ]
   };
 
@@ -47,6 +71,9 @@ const SkillsRadar: React.FC = () => {
     { id: 'overall', label: 'Overall', color: 'bg-violet-500' },
     { id: 'frontend', label: 'Frontend', color: 'bg-blue-500' },
     { id: 'backend', label: 'Backend', color: 'bg-green-500' },
+    { id: 'mobile', label: 'Mobile', color: 'bg-cyan-500' },
+    { id: 'database', label: 'Database', color: 'bg-purple-500' },
+    { id: 'cloud', label: 'Cloud/DevOps', color: 'bg-orange-500' },
   ];
 
   return (
@@ -62,12 +89,13 @@ const SkillsRadar: React.FC = () => {
           </Badge>
         </div>
         
-        <div className="flex space-x-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-4">
           {categoryButtons.map((category) => (
             <Button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               variant={selectedCategory === category.id ? "default" : "outline"}
+              size="sm"
               className={`${selectedCategory === category.id ? category.color : ''} hover:${category.color}`}
             >
               {category.label}
